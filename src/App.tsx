@@ -1,24 +1,47 @@
 import React from 'react';
-import logo from './logo.svg';
+import { ToastContainer } from 'react-toastify';
 import './App.css';
+import Navbar from 'container/Navbar/Navbar';
+import AddPage from 'container/AddPage/AddPage';
+import { Routes,Route} from 'react-router-dom';
+import EditPage from 'container/EditPage/EditPage';
+import Home from 'container/Home/Home';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+      {/*add / edit/ :id*/}
+      <ToastContainer/>
+    
+<Navbar/>
+      <Routes>
+      <Route path ="/" element ={<Home/>}/>
+        <Route path= "/add" element= {<AddPage/>} />
+        <Route path= "/edit/:id" element= {<EditPage/>} />
+
+      </Routes>
+    
+  
+                      {/* <h1>Welcome</h1> */}
+                    
+                    {/* <Route path= "/add" />
+                      {/* <h1>Add Component</h1> 
+                   
+                    <Route path= "/edit/:id" />
+                      <h1>Edit Component</h1> */}
+   
+                  
+        
+
+         
+          
+
+          
+      
+ 
+   
     </div>
   );
 }
